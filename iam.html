@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <title>⚡ I-AM-Chain — Sovereign Browser Universe</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { 
@@ -287,119 +288,119 @@ scrollbar-color: #00eaff #1f2833;
 </style>
 </head>
 <body>
-
 <header>
-  <h1>⚡ I-AM-Chain — Your Browser Becomes the Universe</h1>
-  <p class="tagline">Sovereign Identity · Deterministic AI · Decentralized Everything</p>
-  <div class="tabs">
-    <button class="tab active" data-tab="wallet">🔑 Wallet/DID</button>
-    <button class="tab" data-tab="chain">🧱 Chain</button>
-    <button class="tab" data-tab="social">🌐 Social</button>
-    <button class="tab" data-tab="messages">💬 Messages</button>
-    <button class="tab" data-tab="pipeline">⚙️ Pipeline</button>
-    <button class="tab" data-tab="schema">📋 Schema IDE</button>
-    <button class="tab" data-tab="datasets">📂 Datasets</button>
-    <button class="tab" data-tab="abi">🔧 ABI UI</button>
-    <button class="tab" data-tab="ai">🤖 AI Assistant</button>
-  </div>
+<h1>⚡ I-AM-Chain — Your Browser Becomes the Universe</h1>
+<p class="tagline">Sovereign Identity · Deterministic AI · Decentralized Everything</p>
+<div class="tabs">
+<button class="tab active" data-tab="wallet">🔑 Wallet/DID</button>
+<button class="tab" data-tab="chain">🧱 Chain</button>
+<button class="tab" data-tab="social">🌐 Social</button>
+<button class="tab" data-tab="messages">💬 Messages</button>
+<button class="tab" data-tab="pipeline">⚙️ Pipeline</button>
+<button class="tab" data-tab="schema">📋 Schema IDE</button>
+<button class="tab" data-tab="datasets">📂 Datasets</button>
+<button class="tab" data-tab="abi">🔧 ABI UI</button>
+<button class="tab" data-tab="ai">🤖 AI Assistant</button>
+</div>
 </header>
-
 <div class="container">
-
 <!-- WALLET / DID TAB -->
-<div id="wallet" class="tab-content active">
-  <div class="card">
-    <h3>🔑 Soulbound Identity</h3>
-    <div id="walletStatus" class="wallet-display">
-      <p><strong>Status:</strong> <span class="status pending">Not Initialized</span></p>
-      <p class="info">Your cryptographic identity lives entirely in this browser.</p>
-    </div>
-    <button id="createDID">✨ Create New DID</button>
-    <button id="exportDID">💾 Export DID (VC)</button>
-    <button id="importDIDBtn">📥 Import DID</button>
-    <input type="file" id="importDIDFile" style="display:none;" accept=".json">
-  </div>
-
-  <div class="card">
-    <h3>📊 Identity Details</h3>
-    <pre id="didDetails">No identity created yet.</pre>
-  </div>
+<div class="tab-content active" id="wallet">
+<div class="card">
+<h3>🔑 Soulbound Identity</h3>
+<div class="wallet-display" id="walletStatus">
+<p class="info" id="storageStatus">💾 Local state auto-saves on exit</p>
+<p><strong>Status:</strong> <span class="status pending">Not Initialized</span></p>
+<p class="info">Your cryptographic identity lives entirely in this browser.</p>
 </div>
-
+<button id="createDID">✨ Create New DID</button>
+<button id="exportDID">💾 Export DID (VC)</button>
+<button id="importDIDBtn">📥 Import DID</button>
+<input accept=".json" id="importDIDFile" style="display:none;" type="file"/>
+</div>
+<div class="card">
+<h3>📊 Identity Details</h3>
+<pre id="didDetails">No identity created yet.</pre>
+</div>
+</div>
+<div class="card">
+<h3>💰 Token Balance</h3>
+<p id="walletBalance">Balance: 0 ⚡</p>
+<p class="info">Earn tokens for activity: blocks, posts, workflows.</p>
+</div>
 <!-- CHAIN TAB -->
-<div id="chain" class="tab-content">
-  <div class="card">
-    <h3>🧱 Local Sovereign Chain</h3>
-    <p class="info">Blocks: <span id="blockCount">0</span> | State Root: <span id="stateRoot">—</span></p>
-    <button id="createBlock">➕ Create Block</button>
-    <button id="rollbackBlock">↩️ Rollback</button>
-    <button id="snapshotChain">📸 Snapshot to IPFS</button>
-  </div>
-
-  <div class="card">
-    <h3>📦 Block Explorer</h3>
-    <div id="blockList"></div>
-  </div>
-
-  <div class="card">
-    <h3>🔄 Transactions</h3>
-    <input type="text" id="txData" placeholder="Transaction data (JSON)" />
-    <button id="submitTx">📤 Submit Transaction</button>
-    <div id="txList"></div>
-  </div>
+<div class="tab-content" id="chain">
+<div class="card">
+<h3>🧱 Local Sovereign Chain</h3>
+<p class="info">Blocks: <span id="blockCount">0</span> | State Root: <span id="stateRoot">—</span></p>
+<button id="createBlock">➕ Create Block</button>
+<button id="rollbackBlock">↩️ Rollback</button>
+<button id="snapshotChain">📸 Snapshot to IPFS</button>
 </div>
-
+<div class="card">
+<h3>🌐 Peer-to-Peer Sync</h3>
+<textarea id="peerOffer" placeholder="Paste offer JSON here..."></textarea>
+<button id="createOffer">📤 Create Offer</button>
+<button id="acceptOffer">📥 Accept Offer</button>
+<p class="info">Share offers between browsers to sync blocks and posts.</p>
+</div>
+<div class="card">
+<h3>📦 Block Explorer</h3>
+<div id="blockList"></div>
+</div>
+<div class="card">
+<h3>🔄 Transactions</h3>
+<input id="txData" placeholder="Transaction data (JSON)" type="text">
+<button id="submitTx">📤 Submit Transaction</button>
+<div id="txList"></div>
+</input></div>
+</div>
 <!-- SOCIAL TAB -->
-<div id="social" class="tab-content">
-  <div class="card">
-    <h3>📝 Create Post</h3>
-    <textarea id="postContent" placeholder="What's on your mind? (Stored on IPFS)"></textarea>
-    <button id="createPost">📢 Post to Network</button>
-  </div>
-
-  <div class="card">
-    <h3>🌐 Social Feed</h3>
-    <button id="refreshFeed">🔄 Refresh</button>
-    <div id="socialFeed"></div>
-  </div>
-
-  <div class="card">
-    <h3>👥 Follow System</h3>
-    <input type="text" id="followDID" placeholder="Enter DID to follow" />
-    <button id="followUser">➕ Follow</button>
-    <p class="info">Following: <span id="followingCount">0</span></p>
-  </div>
+<div class="tab-content" id="social">
+<div class="card">
+<h3>📝 Create Post</h3>
+<textarea id="postContent" placeholder="What's on your mind? (Stored on IPFS)"></textarea>
+<button id="createPost">📢 Post to Network</button>
 </div>
-
+<div class="card">
+<h3>🌐 Social Feed</h3>
+<button id="refreshFeed">🔄 Refresh</button>
+<div id="socialFeed"></div>
+</div>
+<div class="card">
+<h3>👥 Follow System</h3>
+<input id="followDID" placeholder="Enter DID to follow" type="text"/>
+<button id="followUser">➕ Follow</button>
+<p class="info">Following: <span id="followingCount">0</span></p>
+</div>
+</div>
 <!-- MESSAGES TAB -->
-<div id="messages" class="tab-content">
-  <div class="card">
-    <h3>💬 Encrypted Messaging</h3>
-    <input type="text" id="msgRecipient" placeholder="Recipient DID" />
-    <textarea id="msgContent" placeholder="Your message (encrypted end-to-end)"></textarea>
-    <button id="sendMsg">🔒 Send Encrypted</button>
-  </div>
-
-  <div class="card">
-    <h3>📬 Inbox</h3>
-    <button id="refreshMsgs">🔄 Refresh</button>
-    <div id="msgList"></div>
-  </div>
+<div class="tab-content" id="messages">
+<div class="card">
+<h3>💬 Encrypted Messaging</h3>
+<input id="msgRecipient" placeholder="Recipient DID" type="text"/>
+<textarea id="msgContent" placeholder="Your message (encrypted end-to-end)"></textarea>
+<button id="sendMsg">🔒 Send Encrypted</button>
 </div>
-
+<div class="card">
+<h3>📬 Inbox</h3>
+<button id="refreshMsgs">🔄 Refresh</button>
+<div id="msgList"></div>
+</div>
+</div>
 <!-- PIPELINE TAB -->
-<div id="pipeline" class="tab-content">
-  <div class="card">
-    <h3>⚙️ Deterministic Pipeline Editor</h3>
-    <textarea id="pipelineCode" rows="12">// Solavia-compatible deterministic pipeline
+<div class="tab-content" id="pipeline">
+<div class="card">
+<h3>⚙️ Deterministic Pipeline Editor</h3>
+<textarea id="pipelineCode" rows="12">// Solavia-compatible deterministic pipeline
 export default async function pipeline(sv) {
   // Stage 1: Input processing
   const input = { numbers: [1, 2, 3, 4, 5], seed: sv.seed };
-  const doubled = input.numbers.map(n => n * 2);
+  const doubled = input.numbers.map(n =&gt; n * 2);
   await sv.stage("DoubleNumbers", input, doubled);
   
   // Stage 2: Compute statistics
-  const sum = doubled.reduce((a, b) => a + b, 0);
+  const sum = doubled.reduce((a, b) =&gt; a + b, 0);
   const stats = { sum, avg: sum / doubled.length, count: doubled.length };
   await sv.stage("Statistics", doubled, stats);
   
@@ -409,153 +410,145 @@ export default async function pipeline(sv) {
   
   return result;
 }</textarea>
-    <div class="grid-2">
-      <div>
-        <label>Seed:</label>
-        <input type="text" id="pipelineSeed" value="1337" />
-      </div>
-      <div>
-        <button id="runPipeline">▶️ Run Pipeline</button>
-        <button id="verifyProof">✅ Verify Proof</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>📊 Pipeline Output</h3>
-    <pre id="pipelineOutput">No pipeline executed yet.</pre>
-  </div>
-
-  <div class="card">
-    <h3>🔗 Merkle Proof</h3>
-    <pre id="merkleProof">Run pipeline to generate proof.</pre>
-  </div>
+<div class="grid-2">
+<div>
+<label>Seed:</label>
+<input id="pipelineSeed" type="text" value="1337"/>
 </div>
-
+<div>
+<button id="runPipeline">▶️ Run Pipeline</button>
+<button id="verifyProof">✅ Verify Proof</button>
+</div>
+</div>
+</div>
+<div class="card">
+<h3>📊 Pipeline Output</h3>
+<pre id="pipelineOutput">No pipeline executed yet.</pre>
+</div>
+<div class="card">
+<h3>🔗 Merkle Proof</h3>
+<pre id="merkleProof">Run pipeline to generate proof.</pre>
+</div>
+</div>
 <!-- SCHEMA IDE TAB -->
-<div id="schema" class="tab-content">
-  <div class="card">
-    <h3>📋 Schema IDE — Workflow Designer</h3>
-    <p class="info">Design multi-step workflows with deterministic execution</p>
-    <div class="grid-2">
-      <div>
-        <label>Workflow Name:</label>
-        <input type="text" id="workflowName" placeholder="My Workflow" />
-        <label>Step Type:</label>
-        <select id="stepType">
-          <option value="transform">Transform Data</option>
-          <option value="fetch">Fetch API</option>
-          <option value="compute">Compute</option>
-          <option value="store">Store to IPFS</option>
-          <option value="verify">Verify Hash</option>
-        </select>
-        <button id="addStep">➕ Add Step</button>
-      </div>
-      <div>
-        <label>Step Configuration:</label>
-        <textarea id="stepConfig" placeholder='{"field": "value"}'></textarea>
-        <button id="saveWorkflow">💾 Save Workflow</button>
-        <button id="executeWorkflow">▶️ Execute</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>🌳 Workflow Tree</h3>
-    <div class="schema-tree" id="schemaTree">
-      <p class="info">No steps added yet.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>📤 Workflow Output</h3>
-    <pre id="workflowOutput">Execute workflow to see results.</pre>
-  </div>
+<div class="tab-content" id="schema">
+<div class="card">
+<h3>📋 Schema IDE — Workflow Designer</h3>
+<p class="info">Design multi-step workflows with deterministic execution</p>
+<div class="grid-2">
+<div>
+<label>Workflow Name:</label>
+<input id="workflowName" placeholder="My Workflow" type="text"/>
+<label>Step Type:</label>
+<select id="stepType">
+<option value="transform">Transform Data</option>
+<option value="fetch">Fetch API</option>
+<option value="compute">Compute</option>
+<option value="store">Store to IPFS</option>
+<option value="verify">Verify Hash</option>
+</select>
+<button id="addStep">➕ Add Step</button>
 </div>
-
+<div>
+<label>Step Configuration:</label>
+<textarea id="stepConfig" placeholder='{"field": "value"}'></textarea>
+<button id="saveWorkflow">💾 Save Workflow</button>
+<button id="executeWorkflow">▶️ Execute</button>
+<button id="compileToPipeline">🧬 Compile → Pipeline</button>
+</div>
+</div>
+</div>
+<div class="card">
+<h3>🌳 Workflow Tree</h3>
+<div class="schema-tree" id="schemaTree">
+<p class="info">No steps added yet.</p>
+</div>
+</div>
+<div class="card">
+<h3>📤 Workflow Output</h3>
+<pre id="workflowOutput">Execute workflow to see results.</pre>
+</div>
+</div>
 <!-- DATASETS TAB -->
-<div id="datasets" class="tab-content">
-  <div class="card">
-    <h3>📂 Dataset Management</h3>
-    <p class="info">Upload, shard, and distribute datasets across IPFS</p>
-    <input type="file" id="datasetFiles" multiple />
-    <label>Chunk Size (MB):</label>
-    <input type="number" id="chunkSize" value="10" min="1" max="100" />
-    <button id="uploadDataset">📦 Shard & Upload</button>
-  </div>
-
-  <div class="card">
-    <h3>📊 Uploaded Datasets</h3>
-    <div id="datasetList"></div>
-  </div>
-
-  <div class="card">
-    <h3>🔍 Retrieve Dataset</h3>
-    <input type="text" id="datasetCID" placeholder="Enter CID" />
-    <button id="retrieveDataset">📥 Retrieve</button>
-    <pre id="datasetContent"></pre>
-  </div>
+<div class="tab-content" id="datasets">
+<div class="card">
+<h3>📂 Dataset Management</h3>
+<p class="info">Upload, shard, and distribute datasets across IPFS</p>
+<input id="datasetFiles" multiple="" type="file"/>
+<label>Chunk Size (MB):</label>
+<input id="chunkSize" max="100" min="1" type="number" value="10"/>
+<button id="uploadDataset">📦 Shard &amp; Upload</button>
 </div>
-
+<div class="card">
+<h3>📊 Uploaded Datasets</h3>
+<div id="datasetList"></div>
+</div>
+<div class="card">
+<h3>🔍 Retrieve Dataset</h3>
+<input id="datasetCID" placeholder="Enter CID" type="text"/>
+<button id="retrieveDataset">📥 Retrieve</button>
+<pre id="datasetContent"></pre>
+</div>
+</div>
 <!-- ABI UI TAB -->
-<div id="abi" class="tab-content">
-  <div class="card">
-    <h3>🔧 ABI → UI Generator</h3>
-    <p class="info">Drop a Solidity ABI JSON to auto-generate interactive forms</p>
-    <textarea id="abiInput" placeholder='Paste Solidity ABI JSON here...' rows="8"></textarea>
-    <button id="generateUI">✨ Generate UI</button>
-  </div>
-
-  <div class="card">
-    <h3>🎛️ Generated Interface</h3>
-    <div id="abiUIOutput"></div>
-  </div>
-
-  <div class="card">
-    <h3>📜 Execution Log</h3>
-    <pre id="abiLog">No executions yet.</pre>
-  </div>
+<div class="tab-content" id="abi">
+<div class="card">
+<h3>🔧 ABI → UI Generator</h3>
+<p class="info">Drop a Solidity ABI JSON to auto-generate interactive forms</p>
+<textarea id="abiInput" placeholder="Paste Solidity ABI JSON here..." rows="8"></textarea>
+<button id="generateUI">✨ Generate UI</button>
 </div>
-
+<div class="card">
+<h3>🎛️ Generated Interface</h3>
+<div id="abiUIOutput"></div>
+</div>
+<div class="card">
+<h3>📜 Execution Log</h3>
+<pre id="abiLog">No executions yet.</pre>
+</div>
+</div>
 <!-- AI ASSISTANT TAB -->
-<div id="ai" class="tab-content">
-  <div class="card">
-    <h3>🤖 AI Assistant</h3>
-    <p class="info">Context-aware AI that understands your chain, workflows, and social graph</p>
-    <div class="chat-container">
-      <div class="chat-messages" id="chatMessages">
-        <div class="chat-msg ai">
+<div class="tab-content" id="ai">
+<div class="card">
+<h3>🤖 AI Assistant</h3>
+<p class="info">Context-aware AI that understands your chain, workflows, and social graph</p>
+<div class="chat-container">
+<div class="chat-messages" id="chatMessages">
+<div class="chat-msg ai">
           👋 Hello! I'm your I-AM-Chain AI assistant. I can help you with:
-          <br>• Understanding blockchain state
-          <br>• Building workflows
-          <br>• Analyzing social interactions
-          <br>• Debugging pipelines
-          <br>Ask me anything!
+          <br/>• Understanding blockchain state
+          <br/>• Building workflows
+          <br/>• Analyzing social interactions
+          <br/>• Debugging pipelines
+          <br/>Ask me anything!
         </div>
-      </div>
-      <div class="chat-input-container">
-        <input type="text" id="chatInput" placeholder="Ask me anything..." />
-        <button id="sendChat">💬 Send</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>⚙️ AI Configuration</h3>
-    <label>API Key (optional - uses Emergent LLM key if empty):</label>
-    <input type="password" id="aiApiKey" placeholder="Leave empty to use Emergent key" />
-    <label>Model:</label>
-    <select id="aiModel">
-      <option value="gpt-4">GPT-4</option>
-      <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
-      <option value="claude">Claude</option>
-    </select>
-    <button id="testAI">🧪 Test Connection</button>
-  </div>
 </div>
-
+<div class="card">
+<h3>🧠 Deterministic AI Extensions</h3>
+<button id="suggestPipeline">💡 Suggest Deterministic Pipeline</button>
+<p class="info">AI analyzes your chain and proposes a runnable pipeline in the Pipeline tab.</p>
 </div>
-
+<div class="chat-input-container">
+<input id="chatInput" placeholder="Ask me anything..." type="text"/>
+<button id="sendChat">💬 Send</button>
+</div>
+</div>
+</div>
+<div class="card">
+<h3>⚙️ AI Configuration</h3>
+<label>API Key (optional - uses Emergent LLM key if empty):</label>
+<input id="aiApiKey" placeholder="Leave empty to use Emergent key" type="password"/>
+<label>Model:</label>
+<select id="aiModel">
+<option value="gpt-4">GPT-4</option>
+<option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+<option value="claude">Claude</option>
+</select>
+<button id="testAI">🧪 Test Connection</button>
+</div>
+</div>
+</div>
+<div id="dashboardContainer"></div>
 <script type="module">
 // ============================================================================
 // CORE IMPORTS & INITIALIZATION
@@ -1249,6 +1242,167 @@ function testAIConnection() {
   alert("AI connection test: This would connect to Emergent LLM or your configured API key. Feature coming soon!");
 }
 
+
+
+// ============================================================================
+// NEW FUNCTIONAL EXTENSIONS FOR I-AM-CHAIN
+// ============================================================================
+
+// Persistent Sovereign State
+async function initStorage() {
+  const persisted = localStorage.getItem("i-am-chain-state");
+  if (persisted) {
+    const state = JSON.parse(persisted);
+    Object.assign(STATE, state);
+    updateChainUI?.();
+    updateSocialUI?.();
+    updateMessagesUI?.();
+    updateDatasetUI?.();
+    log("pipelineOutput", "State restored from localStorage", "success");
+  }
+}
+function saveState() {
+  const toSave = {
+    chain: STATE.chain,
+    transactions: STATE.transactions,
+    socialPosts: STATE.socialPosts,
+    messages: STATE.messages,
+    datasets: STATE.datasets,
+    following: STATE.following,
+    tokenBalance: STATE.tokenBalance || 0
+  };
+  localStorage.setItem("i-am-chain-state", JSON.stringify(toSave));
+}
+window.addEventListener("beforeunload", saveState);
+
+// P2P Sync Layer
+class PeerNetwork {
+  constructor() { this.peers = {}; }
+  async connect(remoteOffer) {
+    const pc = new RTCPeerConnection();
+    const channel = pc.createDataChannel("i-am-sync");
+    channel.onmessage = (e) => this.receive(JSON.parse(e.data));
+    const offer = await pc.createOffer();
+    await pc.setLocalDescription(offer);
+    return offer;
+  }
+  async answer(remoteDesc) {
+    const pc = new RTCPeerConnection();
+    pc.ondatachannel = (e) => {
+      const channel = e.channel;
+      channel.onmessage = (ev) => this.receive(JSON.parse(ev.data));
+      this.peers[remoteDesc] = channel;
+    };
+    await pc.setRemoteDescription(remoteDesc);
+    const answer = await pc.createAnswer();
+    await pc.setLocalDescription(answer);
+    return answer;
+  }
+  broadcast(obj) {
+    Object.values(this.peers).forEach(ch => ch.readyState === "open" && ch.send(JSON.stringify(obj)));
+  }
+  receive(data) {
+    if (data.type === "block") {
+      STATE.chain.push(data.payload);
+      updateChainUI?.();
+    } else if (data.type === "post") {
+      STATE.socialPosts.push(data.payload);
+      updateSocialUI?.();
+    }
+    log("pipelineOutput", `Received ${data.type} from peer`, "info");
+  }
+}
+const P2P = new PeerNetwork();
+
+// Token Economy
+STATE.tokenBalance = STATE.tokenBalance || 0;
+function mintTokens(eventType) {
+  const rewards = { block: 10, post: 3, message: 1, workflow: 5 };
+  STATE.tokenBalance += rewards[eventType] || 0;
+  renderBalance();
+  saveState();
+}
+function renderBalance() {
+  let el = document.getElementById("walletBalance");
+  if (!el) {
+    el = document.createElement("p");
+    el.id = "walletBalance";
+    document.querySelector("#wallet .card").appendChild(el);
+  }
+  el.innerHTML = `💰 <strong>Balance:</strong> ${STATE.tokenBalance.toFixed(2)} ⚡`;
+}
+document.addEventListener("blockCreated", () => mintTokens("block"));
+document.addEventListener("postCreated", () => mintTokens("post"));
+document.addEventListener("workflowExecuted", () => mintTokens("workflow"));
+
+// AI Suggested Pipeline Builder
+async function aiSuggestPipeline(prompt = "analyze chain and propose new workflow") {
+  const ctx = {
+    blocks: STATE.chain.length,
+    posts: STATE.socialPosts.length,
+    messages: STATE.messages.length,
+    datasets: STATE.datasets.map(d => d.name),
+  };
+  const contextString = JSON.stringify(ctx, null, 2);
+  const seed = Math.floor(Math.random() * 9999);
+  const suggestion = `// Suggested deterministic pipeline
+export default async function pipeline(sv) {
+  const info = ${JSON.stringify(ctx)};
+  await sv.stage("AnalyzeState", info, { summary: "ok" });
+  const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(info.blocks.toString()));
+  await sv.stage("ComputeHash", info, Array.from(new Uint8Array(hash)));
+  return { summary: "Generated deterministically", seed: ${seed} };
+}`;
+  document.getElementById("pipelineCode").value = suggestion;
+  log("pipelineOutput", "AI generated new pipeline suggestion", "success");
+}
+
+// Dashboard Visualization
+function renderDashboard() {
+  const canvas = document.createElement("canvas");
+  canvas.id = "chainChart";
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = "<h3>📈 Chain Activity Monitor</h3>";
+  card.appendChild(canvas);
+  document.getElementById("chain").appendChild(card);
+  const ctx = canvas.getContext("2d");
+  const chart = new Chart(ctx, {
+    type: "line",
+    data: { labels: [], datasets: [{ label: "Blocks", data: [], borderWidth: 2 }] },
+    options: { scales: { y: { beginAtZero: true } } }
+  });
+  setInterval(() => {
+    chart.data.labels.push(new Date().toLocaleTimeString());
+    chart.data.datasets[0].data.push(STATE.chain.length);
+    if (chart.data.labels.length > 20) {
+      chart.data.labels.shift();
+      chart.data.datasets[0].data.shift();
+    }
+    chart.update();
+  }, 5000);
+}
+
+// Schema Compiler
+function compileWorkflowToPipeline() {
+  if (!STATE.currentWorkflow || STATE.currentWorkflow.steps.length === 0) {
+    alert("Add steps first!");
+    return;
+  }
+  const lines = [
+    "// Auto-generated pipeline from Schema IDE",
+    "export default async function pipeline(sv) {"
+  ];
+  for (const step of STATE.currentWorkflow.steps) {
+    lines.push(`  // Step: ${step.type}`);
+    lines.push(`  await sv.stage("${step.type}", ${JSON.stringify(step.config)}, { status: "done" });`);
+  }
+  lines.push("  return { success: true, totalSteps: " + STATE.currentWorkflow.steps.length + " };");
+  lines.push("}");
+  document.getElementById("pipelineCode").value = lines.join("\n");
+  log("workflowOutput", "Workflow compiled into executable pipeline", "success");
+}
+
 // ============================================================================
 // TAB NAVIGATION
 // ============================================================================
@@ -1316,16 +1470,37 @@ document.getElementById("chatInput").onkeypress = (e) => {
   if (e.key === "Enter") sendChatMessage();
 };
 document.getElementById("testAI").onclick = testAIConnection;
+document.getElementById("compileToPipeline").onclick = compileWorkflowToPipeline;
+document.getElementById("suggestPipeline").onclick = () => aiSuggestPipeline();
+document.getElementById("createOffer").onclick = async () => {
+  const offer = await P2P.connect();
+  document.getElementById("peerOffer").value = JSON.stringify(offer);
+};
+
+document.getElementById("acceptOffer").onclick = async () => {
+  const val = document.getElementById("peerOffer").value.trim();
+  if (!val) return alert("Paste offer first!");
+  const remote = JSON.parse(val);
+  const answer = await P2P.answer(remote);
+  alert("Send this answer back to your peer:\n" + JSON.stringify(answer));
+};
+
 
 // ============================================================================
 // INITIALIZATION
 // ============================================================================
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
+  await initHelia();
   loadDID();
-  initHelia();
-  console.log("⚡ I-AM-Chain initialized");
+  await initStorage(); 
+  renderBalance?.();
+  renderDashboard?.();
+  console.log("⚡ I-AM-Chain initialized with extended modules");
 });
-</script>
 
+
+
+</script>
 </body>
 </html>
+>
